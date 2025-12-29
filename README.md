@@ -1,40 +1,36 @@
-## 🔄 TYPE CASTING IN PYTHON 🔄
+# ==========================================
+## 🔄 PYTHON TYPE CASTING EXAMPLES
+# ==========================================
 
-## 🔢 1. Integer Conversion (int)
-### Converting floating points, numeric strings, and booleans
-print("🔢 ----- INTEGER -----")
-print(int(3.14))       # 💡 Drops decimals (3)
-print(int('10'))       # 💡 String to whole number (10)
-print(int(False))      # 💡 False maps to 0
-print(int(True))       # 💡 True maps to 1
+## 🔢 INTEGER (int)
+# ------------------------------------------
+print("🔢 [INTEGER CONVERSION]")
+print(f"Float to Int: {int(3.14)}")       # Result: 3
+print(f"String to Int: {int('10')}")      # Result: 10
+print(f"Bool to Int: {int(True)}")        # Result: 1
 
-# 🌊 2. Float Conversion (float)
-# Adding precision to integers and strings
-print("\n🌊 ----- FLOAT -----")
-print(float(3))        # 💡 Adds decimal (3.0)
-print(float('10'))     # 💡 String to float (10.0)
-print(float('10.5'))   # 💡 Decimal string to float (10.5)
-print(float(True))     # 💡 True maps to 1.0
+## 🌊 FLOAT (float)
+# ------------------------------------------
+print("\n🌊 [FLOAT CONVERSION]")
+print(f"Int to Float: {float(3)}")        # Result: 3.0
+print(f"String to Float: {float('10.5')}") # Result: 10.5
+print(f"Bool to Float: {float(False)}")   # Result: 0.0
 
-# ✅ 3. Boolean Conversion (bool)
-# Truthiness check: 0 and Empty values are False, others are True
-print("\n✅ ----- BOOLEAN -----") 
-print(bool(1))            # True
-print(bool(1000))         # True
-print(bool(-12221))       # True (Negative numbers are still True)
-print(bool(0))            # ❌ False
-print(bool(0.0))          # ❌ False
-print(bool("Ashish"))     # True
-print(bool(' '))          # True (Space counts as content)
-print(bool(''))           # ❌ False (Empty string)
+## ✅ BOOLEAN (bool)
+# ------------------------------------------
+print("\n✅ [BOOLEAN TRUTHINESS]")
+# Values that return False:
+print(f"Zero: {bool(0)}")                 # ❌ False
+print(f"Empty String: {bool('')}")        # ❌ False
+# Values that return True:
+print(f"Non-zero: {bool(-121)}")          # ✅ True
+print(f"Space string: {bool(' ')}")       # ✅ True
+print(f"Name string: {bool('Ashish')}")   # ✅ True
 
-## ⚠️ 4. Exceptions & Nested Casting
-print("\n⚠️ ----- EXCEPTIONS -----")
-## ❌ print(int('3.14'))   ## ERROR: Cannot go direct from decimal string to int
-
-## ✅ The "Two-Step" Solution:
-## String ('5.99') -> Float (5.99) -> Int (5)
-print(int(float('5.99'))) 
-
-## Float (8.14) -> Int (8) -> Float (8.0)
-print(float(int(8.14)))
+## 🛠️ NESTED CASTING (The Pro Way)
+# ------------------------------------------
+print("\n🛠️ [NESTED / STEP CASTING]")
+# Error bypass: String -> Float -> Int
+val_str = '5.99'
+result = int(float(val_str)) 
+print(f"Nested Casting ('5.99' -> 5): {result}")
