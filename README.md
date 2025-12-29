@@ -1,7 +1,7 @@
-# 🔄 TYPE CASTING IN PYTHON 🔄
+## 🔄 TYPE CASTING IN PYTHON 🔄
 
-# 🔢 1. Integer Conversion (int)
-# Converting floating points, numeric strings, and booleans
+## 🔢 1. Integer Conversion (int)
+### Converting floating points, numeric strings, and booleans
 print("🔢 ----- INTEGER -----")
 print(int(3.14))       # 💡 Drops decimals (3)
 print(int('10'))       # 💡 String to whole number (10)
@@ -28,13 +28,13 @@ print(bool("Ashish"))     # True
 print(bool(' '))          # True (Space counts as content)
 print(bool(''))           # ❌ False (Empty string)
 
-# ⚠️ 4. Exceptions & Nested Casting
+## ⚠️ 4. Exceptions & Nested Casting
 print("\n⚠️ ----- EXCEPTIONS -----")
-# ❌ print(int('3.14'))   # ERROR: Cannot go direct from decimal string to int
+## ❌ print(int('3.14'))   ## ERROR: Cannot go direct from decimal string to int
 
-# ✅ The "Two-Step" Solution:
-# String ('5.99') -> Float (5.99) -> Int (5)
+## ✅ The "Two-Step" Solution:
+## String ('5.99') -> Float (5.99) -> Int (5)
 print(int(float('5.99'))) 
 
-# Float (8.14) -> Int (8) -> Float (8.0)
+## Float (8.14) -> Int (8) -> Float (8.0)
 print(float(int(8.14)))
